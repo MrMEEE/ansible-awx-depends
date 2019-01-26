@@ -3,21 +3,21 @@
 %{!?scl:%global pkg_name %{name}}
 
 %define name pyasn1
-%define version 0.4.2
-%define unmangled_version 0.4.2
-%define unmangled_version 0.4.2
+%define version 0.4.5
+%define unmangled_version 0.4.5
+%define unmangled_version 0.4.5
 %define release 1
 
 Summary: ASN.1 types and codecs
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Name: %{?scl_prefix}%{pkg_name}
+Name: %{?scl_prefix}pyasn1
 Version: %{version}
 Release: %{release}
 Source0: pyasn1-%{unmangled_version}.tar.gz
 License: BSD
 Group: Development/Libraries
-BuildRoot: %{_tmppath}/%{pkg_name}-%{version}-%{release}-buildroot
+BuildRoot: %{_tmppath}/pyasn1-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Ilya Etingof <etingof@gmail.com> <etingof@gmail.com>

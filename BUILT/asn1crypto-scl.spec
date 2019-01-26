@@ -11,13 +11,13 @@
 Summary: Fast ASN.1 parser and serializer with definitions for private keys, public keys, certificates, CRL, OCSP, CMS, PKCS#3, PKCS#7, PKCS#8, PKCS#12, PKCS#5, X.509 and TSP
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Name: %{?scl_prefix}%{pkg_name}
+Name: %{?scl_prefix}asn1crypto
 Version: %{version}
 Release: %{release}
 Source0: asn1crypto-%{unmangled_version}.tar.gz
 License: MIT
 Group: Development/Libraries
-BuildRoot: %{_tmppath}/%{pkg_name}-%{version}-%{release}-buildroot
+BuildRoot: %{_tmppath}/asn1crypto-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: wbond <will@wbond.net>

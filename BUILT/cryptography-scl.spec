@@ -3,33 +3,33 @@
 %{!?scl:%global pkg_name %{name}}
 
 %define name cryptography
-%define version 2.3.1
-%define unmangled_version 2.3.1
-%define unmangled_version 2.3.1
+%define version 2.1.4
+%define unmangled_version 2.1.4
+%define unmangled_version 2.1.4
 %define release 1
 
 Summary: cryptography is a package which provides cryptographic recipes and primitives to Python developers.
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Name: %{?scl_prefix}%{pkg_name}
+Name: %{?scl_prefix}cryptography
 Version: %{version}
 Release: %{release}
 Source0: cryptography-%{unmangled_version}.tar.gz
 License: BSD or Apache License, Version 2.0
 Group: Development/Libraries
-BuildRoot: %{_tmppath}/%{pkg_name}-%{version}-%{release}-buildroot
+BuildRoot: %{_tmppath}/cryptography-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 Vendor: The cryptography developers <cryptography-dev@python.org>
 Packager: Martin Juhl <m@rtinjuhl.dk>
 Url: https://github.com/pyca/cryptography
-BuildRequires: %{?scl_prefix}cffi %{?scl_prefix}pycparser
+
 
 %description
 pyca/cryptography
 =================
 
 .. image:: https://img.shields.io/pypi/v/cryptography.svg
-    :target: https://pypi.org/project/cryptography/
+    :target: https://pypi.python.org/pypi/cryptography/
     :alt: Latest Version
 
 .. image:: https://readthedocs.org/projects/cryptography/badge/?version=latest
@@ -45,7 +45,7 @@ pyca/cryptography
 
 ``cryptography`` is a package which provides cryptographic recipes and
 primitives to Python developers.  Our goal is for it to be your "cryptographic
-standard library". It supports Python 2.7, Python 3.4+, and PyPy 5.3+.
+standard library". It supports Python 2.6-2.7, Python 3.4+, and PyPy 5.3+.
 
 ``cryptography`` includes both high level recipes and low level interfaces to
 common cryptographic algorithms such as symmetric ciphers, message digests, and
@@ -84,18 +84,11 @@ We maintain a `cryptography-dev`_ mailing list for development discussion.
 You can also join ``#cryptography-dev`` on Freenode to ask questions or get
 involved.
 
-Security
-~~~~~~~~
-
-Need to report a security issue? Please consult our `security reporting`_
-documentation.
-
 
 .. _`documentation`: https://cryptography.io/
 .. _`the installation documentation`: https://cryptography.io/en/latest/installation/
 .. _`issue tracker`: https://github.com/pyca/cryptography/issues
 .. _`cryptography-dev`: https://mail.python.org/mailman/listinfo/cryptography-dev
-.. _`security reporting`: https://cryptography.io/en/latest/security/
 
 
 

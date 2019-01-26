@@ -3,21 +3,21 @@
 %{!?scl:%global pkg_name %{name}}
 
 %define name PyJWT
-%define version 1.6.0
-%define unmangled_version 1.6.0
-%define unmangled_version 1.6.0
+%define version 1.7.1
+%define unmangled_version 1.7.1
+%define unmangled_version 1.7.1
 %define release 1
 
 Summary: JSON Web Token implementation in Python
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Name: %{?scl_prefix}%{pkg_name}
+Name: %{?scl_prefix}PyJWT
 Version: %{version}
 Release: %{release}
 Source0: PyJWT-%{unmangled_version}.tar.gz
 License: MIT
 Group: Development/Libraries
-BuildRoot: %{_tmppath}/%{pkg_name}-%{version}-%{release}-buildroot
+BuildRoot: %{_tmppath}/PyJWT-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Jose Padilla <hello@jpadilla.com>
@@ -29,8 +29,8 @@ Url: http://github.com/jpadilla/pyjwt
 PyJWT
 =====
 
-.. image:: https://secure.travis-ci.org/jpadilla/pyjwt.svg?branch=master
-   :target: http://travis-ci.org/jpadilla/pyjwt?branch=master
+.. image:: https://travis-ci.com/jpadilla/pyjwt.svg?branch=master
+   :target: http://travis-ci.com/jpadilla/pyjwt?branch=master
 
 .. image:: https://ci.appveyor.com/api/projects/status/h8nt70aqtwhht39t?svg=true
    :target: https://ci.appveyor.com/project/jpadilla/pyjwt
@@ -87,8 +87,8 @@ Usage::
 
 Decoding examples::
 
-    pyjwt --key=secret TOKEN
-    pyjwt --no-verify TOKEN
+    pyjwt --key=secret decode TOKEN
+    pyjwt decode --no-verify TOKEN
 
 See more options executing ``pyjwt --help``.
 

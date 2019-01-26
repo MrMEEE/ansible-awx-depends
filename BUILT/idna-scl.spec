@@ -3,21 +3,21 @@
 %{!?scl:%global pkg_name %{name}}
 
 %define name idna
-%define version 2.6
-%define unmangled_version 2.6
-%define unmangled_version 2.6
+%define version 2.8
+%define unmangled_version 2.8
+%define unmangled_version 2.8
 %define release 1
 
 Summary: Internationalized Domain Names in Applications (IDNA)
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Name: %{?scl_prefix}%{pkg_name}
+Name: %{?scl_prefix}idna
 Version: %{version}
 Release: %{release}
 Source0: idna-%{unmangled_version}.tar.gz
 License: BSD-like
 Group: Development/Libraries
-BuildRoot: %{_tmppath}/%{pkg_name}-%{version}-%{release}-buildroot
+BuildRoot: %{_tmppath}/idna-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Kim Davies <kim@cynosure.com.au>
@@ -83,7 +83,7 @@ Alternatively, you can install the package using the bundled setup script:
 
     $ python setup.py install
 
-This library works with Python 2.6 or later, and Python 3.3 or later.
+This library works with Python 2.7 and Python 3.4 or later.
 
 
 Usage
@@ -223,7 +223,7 @@ in computing the table data. For example, ``idna-data --version 9.0.0 make-libda
 will generate library data against Unicode 9.0.0.
 
 Note that this script requires Python 3, but all generated library data will work
-in Python 2.6+.
+in Python 2.7.
 
 
 Testing

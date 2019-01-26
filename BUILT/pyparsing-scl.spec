@@ -3,26 +3,26 @@
 %{!?scl:%global pkg_name %{name}}
 
 %define name pyparsing
-%define version 2.2.0
-%define unmangled_version 2.2.0
-%define unmangled_version 2.2.0
+%define version 2.3.1
+%define unmangled_version 2.3.1
+%define unmangled_version 2.3.1
 %define release 1
 
 Summary: Python parsing module
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Name: %{?scl_prefix}%{pkg_name}
+Name: %{?scl_prefix}pyparsing
 Version: %{version}
 Release: %{release}
 Source0: pyparsing-%{unmangled_version}.tar.gz
 License: MIT License
 Group: Development/Libraries
-BuildRoot: %{_tmppath}/%{pkg_name}-%{version}-%{release}-buildroot
+BuildRoot: %{_tmppath}/pyparsing-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Paul McGuire <ptmcg@users.sourceforge.net>
 Packager: Martin Juhl <m@rtinjuhl.dk>
-Url: http://pyparsing.wikispaces.com/
+Url: https://github.com/pyparsing/pyparsing/
 
 
 %description

@@ -3,21 +3,21 @@
 %{!?scl:%global pkg_name %{name}}
 
 %define name lxml
-%define version 4.2.3
-%define unmangled_version 4.2.3
-%define unmangled_version 4.2.3
+%define version 4.1.1
+%define unmangled_version 4.1.1
+%define unmangled_version 4.1.1
 %define release 1
 
 Summary: Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API.
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Name: %{?scl_prefix}%{pkg_name}
+Name: %{?scl_prefix}lxml
 Version: %{version}
 Release: %{release}
 Source0: lxml-%{unmangled_version}.tar.gz
 License: BSD
 Group: Development/Libraries
-BuildRoot: %{_tmppath}/%{pkg_name}-%{version}-%{release}-buildroot
+BuildRoot: %{_tmppath}/lxml-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 Vendor: lxml dev team <lxml-dev@lxml.de>
 Packager: Martin Juhl <m@rtinjuhl.dk>
@@ -48,20 +48,17 @@ an appropriate version of Cython installed.
 
 After an official release of a new stable series, bug fixes may become
 available at
-https://github.com/lxml/lxml/tree/lxml-4.2 .
-Running ``easy_install lxml==4.2bugfix`` will install
+https://github.com/lxml/lxml/tree/lxml-4.1 .
+Running ``easy_install lxml==4.1bugfix`` will install
 the unreleased branch state from
-https://github.com/lxml/lxml/tarball/lxml-4.2#egg=lxml-4.2bugfix
+https://github.com/lxml/lxml/tarball/lxml-4.1#egg=lxml-4.1bugfix
 as soon as a maintenance branch has been established.  Note that this
 requires Cython to be installed at an appropriate version for the build.
 
-4.2.3 (2018-06-27)
+4.1.1 (2017-11-04)
 ==================
 
-Bugs fixed
-----------
-
-* Reverted GH#265: lxml links against zlib as a shared library again.
+* Rebuild with Cython 0.27.3 to improve support for Py3.7.
 
 
 

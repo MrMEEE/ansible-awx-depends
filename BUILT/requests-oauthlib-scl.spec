@@ -3,21 +3,21 @@
 %{!?scl:%global pkg_name %{name}}
 
 %define name requests-oauthlib
-%define version 0.8.0
-%define unmangled_version 0.8.0
-%define unmangled_version 0.8.0
+%define version 1.2.0
+%define unmangled_version 1.2.0
+%define unmangled_version 1.2.0
 %define release 1
 
 Summary: OAuthlib authentication support for Requests.
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Name: %{?scl_prefix}%{pkg_name}
+Name: %{?scl_prefix}requests-oauthlib
 Version: %{version}
 Release: %{release}
 Source0: requests-oauthlib-%{unmangled_version}.tar.gz
 License: ISC
 Group: Development/Libraries
-BuildRoot: %{_tmppath}/%{pkg_name}-%{version}-%{release}-buildroot
+BuildRoot: %{_tmppath}/requests-oauthlib-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Kenneth Reitz <me@kennethreitz.com>
@@ -50,9 +50,9 @@ Accessing protected resources using requests_oauthlib is as simple as:
     >>> r = twitter.get(url)
 
 Before accessing resources you will need to obtain a few credentials from your
-provider (i.e. Twitter) and authorization from the user for whom you wish to
+provider (e.g. Twitter) and authorization from the user for whom you wish to
 retrieve resources for. You can read all about this in the full
-`OAuth 1 workflow guide on RTD <http://requests-oauthlib.readthedocs.org/en/latest/oauth1_workflow.html>`_.
+`OAuth 1 workflow guide on RTD <https://requests-oauthlib.readthedocs.io/en/latest/oauth1_workflow.html>`_.
 
 The OAuth 2 workflow
 --------------------
@@ -63,9 +63,9 @@ flow.
 
 Fetching a protected resource after obtaining an access token can be extremely
 simple. However, before accessing resources you will need to obtain a few
-credentials from your provider (i.e. Google) and authorization from the user
+credentials from your provider (e.g. Google) and authorization from the user
 for whom you wish to retrieve resources for. You can read all about this in the
-full `OAuth 2 workflow guide on RTD <http://requests-oauthlib.readthedocs.org/en/latest/oauth2_workflow.html>`_.
+full `OAuth 2 workflow guide on RTD <https://requests-oauthlib.readthedocs.io/en/latest/oauth2_workflow.html>`_.
 
 Installation
 -------------
@@ -80,14 +80,53 @@ To install requests and requests_oauthlib you can use pip:
    :target: https://travis-ci.org/requests/requests-oauthlib
 .. |coverage-status| image:: https://img.shields.io/coveralls/requests/requests-oauthlib.svg
    :target: https://coveralls.io/r/requests/requests-oauthlib
-.. |docs| image:: https://readthedocs.org/projects/requests-oauthlib/badge/?version=latest
+.. |docs| image:: https://readthedocs.org/projects/requests-oauthlib/badge/
    :alt: Documentation Status
    :scale: 100%
-   :target: https://readthedocs.org/projects/requests-oauthlib/
+   :target: https://requests-oauthlib.readthedocs.io/
 
 
 History
 -------
+
+UNRELEASED
+++++++++++
+
+nothing yet
+
+v1.2.0 (14 January 2019)
+++++++++++++++++++++++++
+
+- This project now depends on OAuthlib 3.0.0 and above. It does **not** support
+  versions of OAuthlib before 3.0.0.
+- Updated oauth2 tests to use 'sess' for an OAuth2Session instance instead of `auth`
+  because OAuth2Session objects and methods acceept an `auth` paramether which is
+  typically an instance of `requests.auth.HTTPBasicAuth`
+- `OAuth2Session.fetch_token` previously tried to guess how and where to provide
+  "client" and "user" credentials incorrectly. This was incompatible with some
+  OAuth servers and incompatible with breaking changes in oauthlib that seek to
+  correctly provide the `client_id`. The older implementation also did not raise
+  the correct exceptions when username and password are not present on Legacy
+  clients.
+- Avoid automatic netrc authentication for OAuth2Session.
+
+v1.1.0 (9 January 2019)
++++++++++++++++++++++++
+
+- Adjusted version specifier for ``oauthlib`` dependency: this project is
+  not yet compatible with ``oauthlib`` 3.0.0.
+- Dropped dependency on ``nose``.
+- Minor changes to clean up the code and make it more readable/maintainable.
+
+v1.0.0 (4 June 2018)
+++++++++++++++++++++
+
+- **Removed support for Python 2.6 and Python 3.3.**
+  This project now supports Python 2.7, and Python 3.4 and above.
+- Added several examples to the documentation.
+- Added plentymarkets compliance fix.
+- Added a ``token`` property to OAuth1Session, to match the corresponding
+  ``token`` property on OAuth2Session.
 
 v0.8.0 (14 February 2017)
 +++++++++++++++++++++++++

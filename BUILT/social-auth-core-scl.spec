@@ -3,21 +3,21 @@
 %{!?scl:%global pkg_name %{name}}
 
 %define name social-auth-core
-%define version 1.7.0
-%define unmangled_version 1.7.0
-%define unmangled_version 1.7.0
+%define version 3.0.0
+%define unmangled_version 3.0.0
+%define unmangled_version 3.0.0
 %define release 1
 
 Summary: Python social authentication made simple.
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Name: %{?scl_prefix}%{pkg_name}
+Name: %{?scl_prefix}social-auth-core
 Version: %{version}
 Release: %{release}
 Source0: social-auth-core-%{unmangled_version}.tar.gz
 License: BSD
 Group: Development/Libraries
-BuildRoot: %{_tmppath}/%{pkg_name}-%{version}-%{release}-buildroot
+BuildRoot: %{_tmppath}/social-auth-core-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Matias Aguirre <matiasaguirre@gmail.com>

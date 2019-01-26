@@ -3,21 +3,21 @@
 %{!?scl:%global pkg_name %{name}}
 
 %define name appdirs
-%define version 1.4.2
-%define unmangled_version 1.4.2
-%define unmangled_version 1.4.2
+%define version 1.4.3
+%define unmangled_version 1.4.3
+%define unmangled_version 1.4.3
 %define release 1
 
 Summary: A small Python module for determining appropriate platform-specific dirs, e.g. a "user data dir".
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Name: %{?scl_prefix}%{pkg_name}
+Name: %{?scl_prefix}appdirs
 Version: %{version}
 Release: %{release}
 Source0: appdirs-%{unmangled_version}.tar.gz
 License: MIT
 Group: Development/Libraries
-BuildRoot: %{_tmppath}/%{pkg_name}-%{version}-%{release}-buildroot
+BuildRoot: %{_tmppath}/appdirs-%{version}-%{release}-buildroot
 Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: Trent Mick; Sridhar Ratnakumar; Jeff Rouse <trentm@gmail.com; github@srid.name; jr@its.to>
@@ -169,6 +169,11 @@ dirs::
 
 appdirs Changelog
 =================
+
+appdirs 1.4.3
+-------------
+- [PR #76] Python 3.6 invalid escape sequence deprecation fixes
+- Fix for Python 3.6 support
 
 appdirs 1.4.2
 -------------
