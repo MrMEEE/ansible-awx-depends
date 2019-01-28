@@ -3,9 +3,9 @@
 %{!?scl:%global pkg_name %{name}}
 
 %define name pbr
-%define version 3.1.1
-%define unmangled_version 3.1.1
-%define unmangled_version 3.1.1
+%define version 5.1.1
+%define unmangled_version 5.1.1
+%define unmangled_version 5.1.1
 %define release 1
 
 Summary: Python Build Reasonableness
@@ -22,7 +22,7 @@ Prefix: %{_prefix}
 BuildArch: noarch
 Vendor: OpenStack <openstack-dev@lists.openstack.org>
 Packager: Martin Juhl <m@rtinjuhl.dk>
-Url: http://docs.openstack.org/developer/pbr/
+Url: https://docs.openstack.org/pbr/latest/
 
 
 %description
@@ -59,10 +59,10 @@ when that library itself will alter how the setup is processed. As Metadata
 them as quickly as possible.
 
 * License: Apache License, Version 2.0
-* Documentation: http://docs.openstack.org/developer/pbr
-* Source: http://git.openstack.org/cgit/openstack-dev/pbr
-* Bugs: http://bugs.launchpad.net/pbr
-* Change Log: https://docs.openstack.org/developer/pbr/history.html
+* Documentation: https://docs.openstack.org/pbr/latest/
+* Source: https://git.openstack.org/cgit/openstack-dev/pbr
+* Bugs: https://bugs.launchpad.net/pbr
+* Change Log: https://docs.openstack.org/pbr/latest/user/history.html
 
 .. _d2to1: https://pypi.python.org/pypi/d2to1
 .. _distutils2: https://pypi.python.org/pypi/Distutils2

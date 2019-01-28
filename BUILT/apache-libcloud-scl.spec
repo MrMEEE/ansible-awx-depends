@@ -10,7 +10,7 @@
 
 Summary: A standard Python library that abstracts away differences among multiple cloud provider APIs. For more information and documentation, please see http://libcloud.apache.org
 %{?scl:Requires: %{scl}-runtime}
-%{?scl:BuildRequires: %{scl}-runtime}
+%{?scl:BuildRequires: %{scl}-runtime %{?scl_prefix}%{scl}-pytest-runner}
 Name: %{?scl_prefix}apache-libcloud
 Version: %{version}
 Release: %{release}

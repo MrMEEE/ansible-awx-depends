@@ -10,7 +10,7 @@
 
 Summary: Authentication Library for OpenStack Identity
 %{?scl:Requires: %{scl}-runtime}
-%{?scl:BuildRequires: %{scl}-runtime}
+%{?scl:BuildRequires: %{scl}-runtime %{scl}-pbr}
 Name: %{?scl_prefix}keystoneauth1
 Version: %{version}
 Release: %{release}

@@ -6,7 +6,7 @@
 %define version 6.5
 %define unmangled_version 6.5
 %define unmangled_version 6.5
-%define release 1
+%define release 2
 
 Summary: VMware vSphere Python SDK
 Name: %{?scl_prefix}pyvmomi
@@ -22,7 +22,7 @@ Vendor: VMware, Inc. <jhu@vmware.com>
 Packager: Martin Juhl <m@rtinjuhl.dk>
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Requires: %{?scl_prefix}python-six %{?scl_prefix}python-requests
+Requires: %{?scl_prefix}six %{?scl_prefix}requests
 Url: https://github.com/vmware/pyvmomi
 
 

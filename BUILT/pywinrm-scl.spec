@@ -6,7 +6,7 @@
 %define version 0.3.0
 %define unmangled_version 0.3.0
 %define unmangled_version 0.3.0
-%define release 1
+%define release 2
 
 Summary: Python library for Windows Remote Management
 Name: %{?scl_prefix}pywinrm
@@ -22,7 +22,7 @@ Vendor: Alexey Diyan <alexey.diyan@gmail.com>
 Packager: Martin Juhl <m@rtinjuhl.dk>
 %{?scl:Requires: %{scl}-runtime}
 %{?scl:BuildRequires: %{scl}-runtime}
-Requires: %{?scl_prefix}python-xmltodict
+Requires: %{?scl_prefix}xmltodict
 Url: http://github.com/diyan/pywinrm/
 
 
