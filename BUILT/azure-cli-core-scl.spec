@@ -1,12 +1,13 @@
 %define scl rh-python36
 %{?scl:%scl_package %{name}}
 %{!?scl:%global pkg_name %{name}}
+%define _unpackaged_files_terminate_build 0 
 
 %define name azure-cli-core
 %define version 2.0.35
 %define unmangled_version 2.0.35
 %define unmangled_version 2.0.35
-%define release 1
+%define release 2
 
 Summary: Microsoft Azure Command-Line Tools Core Module
 %{?scl:Requires: %{scl}-runtime}
@@ -326,7 +327,7 @@ python3 setup.py build
 set -ex
 python3 setup.py install --single-version-externally-managed -O1 --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
 %{?scl:EOF}
-
+cat INSTALLED_FILES |grep -v "/opt/rh/rh-python36/root/usr/lib/python3.6/site-packages/azure/__pycache__" |grep -v "/opt/rh/rh-python36/root/usr/lib/python3.6/site-packages/azure/__init__.py" > INSTALLED_FILES_WITHOUT_COMMON_PYCACHE
 
 %clean
 %{?scl:scl enable %{scl} - << \EOF}
@@ -335,5 +336,5 @@ rm -rf $RPM_BUILD_ROOT
 %{?scl:EOF}
 
 
-%files -f INSTALLED_FILES
+%files -f INSTALLED_FILES_WITHOUT_COMMON_PYCACHE
 %defattr(-,root,root)
